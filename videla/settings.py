@@ -3,7 +3,10 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
+import pymysql
 BASE_DIR = Path(__file__).resolve().parent.parent
+pymysql.install_as_MySQLdb()
+
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
 DEBUG = os.getenv("DEBUG","1") == "1"
